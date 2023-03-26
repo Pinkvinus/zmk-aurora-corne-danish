@@ -8,29 +8,53 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEFAULT 0
+#define NUMCHAR 1
+#define DIREC   2
+
 / {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  Å  |
+// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  Æ  |  Ø  |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  | GUI | ALT |
+//                    | GUI | LWR | SPC |   | ENT | SPACE| ALT |
+                bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T     &kp Y   &kp U       &kp I     &kp O   &kp P    &kp Å
+   &kp LSHFT &kp A &kp S &kp D &kp F &kp G     &kp H   &kp J       &kp K     &kp L   &kp Æ    &kp Ø
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B     &kp N   &kp M       &kp COMMA &kp DOT &kp LGUI &kp ALT
+                   &mo 1 &lt 1 BSPC  &kp ESC   &kp ENT &lt 1 SPACE &mo 2
                         >;
                 };
+
+                lower_layer {
+// -----------------------------------------------------------------------------------------
+// |   +  |  -  |  7  |  8  |  9  |  '  |       |  <  |  [  |  ]  |  /  |  |  |  \  |
+// |   *  |  ^  |  4  |  5  |  6  |  ~  |       |  >  |  {  |  }  |  !  |  @  |  #  |
+// |   ?  |  =  |  1  |  2  |  3  |  ¨  |       |  "  |  (  |  )  |  $  |  %  |  &  |
+//                    |  0  | BSPC| ESC |       |     |     |     |
+                bindings = <
+   &trans &trans &kp 7 &kp 8 &kp 9    &trans      &kp LT &kp LBKT &kp RBKT
+   &trans &trans &kp 4 &kp 5 &kp 6    &trans      &kp GT &kp LPAR &kp RPAR
+   &trans &trans &kp 1 &kp 2 &kp 3    &trans      &trans &kp LBRC &kp RBRC
+                       &kp 0 &kp BSPC &ESC>;
+                };
+
+
+
+
+
+
+
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+//                    | GUI |     | SPC |   | ENT |    | ALT |
                         bindings = <
    &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
@@ -41,9 +65,9 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+// |  TAB |  !  |  7  |  8  |  9  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+// | CTRL |     |  4  |  5  |  6  |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+// | SHFT |     |  1  |  2  |  3  |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
