@@ -8,10 +8,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define DEFAULT 0
-#define NUMCHAR 1
-#define DIREC   2
-
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -40,7 +36,8 @@
    &kp PLUS  &kp MINUS &kp 7 &kp 8    &kp 9   &kp SQT      &kp LT  &kp LBKT &kp RBKT &kp FSLH &kp PIPE  &kp BSLH
    &kp STAR  &kp CARET &kp 4 &kp 5    &kp 6   &kp TILDE    &kp GT  &kp LPAR &kp RPAR &kp EXCL &kp AT    &kp HASH
    &kp QMARK &kp EQUAL &kp 1 &kp 2    &kp 3   &trans       &trans  &kp LBRC &kp RBRC &kp DLLR &kp PRCNT &kp AMPS
-                       &kp 0 &kp BSPC &kp ESC              &kp RET &trans   &trans>;
+                       &kp 0 &kp BSPC &kp ESC              &kp RET &trans   &trans
+                       >;
                 };
 
                 dir {
@@ -53,11 +50,8 @@
    &trans &kp TAB   &trans   &kp UP   &trans    &trans     &trans  &trans    &kp C_VOL_UP &trans  &trans &trans
    &trans &kp LSHFT &kp LEFT &kp DOWN &kp RIGHT &trans     &trans  &kp HOME  &kp C_VOL_DN &kp END &trans &trans
    &trans &kp LCTRL &trans   &trans   &trans    &trans     &trans  &trans    &trans       &trans  &trans &trans
-                             &trans   &trans    &kp ESC    &kp RET &kp SPACE &trans >;
+                             &trans   &trans    &kp ESC    &kp RET &kp SPACE &trans 
+                        >;
                 };
-
-
-
-
         };
 };
