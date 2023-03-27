@@ -24,7 +24,7 @@
 //                    | GUI | LWR | SPC |   | ENT | SPACE| ALT |
 
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LPAR
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBKT
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp LGUI &kp LALT
                    &mo NUMCHAR &lt DIREC BSPC  &kp ESC   &kp RET &lt NUMCHAR SPACE &mo DIREC
@@ -38,10 +38,10 @@
 // |   ?  |  =  |  1  |  2  |  3  |  ¨  |       |  "  |  (  |  )  |  $  |  %  |  &  |
 //                    |  0  | BSPC| ESC |       | ENT |     |     |
                 bindings = <
-   &kp PLUS  &kp MINUS &kp 7 &kp 8    &kp 9   &kp SQT      &kp LT  &kp LBKT &kp RBKT &kp FSLH &kp PIPE  &kp BSLH
-   &kp STAR  &kp CARET &kp 4 &kp 5    &kp 6   &kp TILDE    &kp GT  &kp LPAR &kp RPAR &kp EXCL &kp AT    &kp HASH
-   &kp QMARK &kp EQUAL &kp 1 &kp 2    &kp 3   &trans       &trans  &kp LBRC &kp RBRC &kp DLLR &kp PRCNT &kp AMPS
-                       &kp 0 &kp BSPC &kp ESC              &kp RET &trans   &trans
+   &kp PLUS  &kp MINUS &kp N7 &kp N8   &kp N9   &kp SQT      &kp LT  &kp LBKT &kp RBKT &kp FSLH &kp PIPE  &kp BSLH
+   &kp STAR  &kp CARET &kp N4 &kp N5   &kp N6   &kp TILDE    &kp GT  &kp LPAR &kp RPAR &kp EXCL &kp AT    &kp HASH
+   &kp QMARK &kp EQUAL &kp N1 &kp N2   &kp N3   &none       &none  &kp LBRC &kp RBRC &kp DLLR &kp PRCNT &kp AMPS
+                       &kp N0 &kp BSPC &kp ESC              &kp RET &none   &none
                        >;
                 };
 
@@ -52,10 +52,10 @@
 // |     |lctrl|     |     |     |     |       |     |      |       |     |    |    |
 //                   |     |     | ESC |       | ENT | space|       |
                 bindings = <
-   &trans &kp TAB   &trans   &kp UP   &trans    &trans     &trans  &trans    &kp C_VOL_UP &trans  &trans &trans
-   &trans &kp LSHFT &kp LEFT &kp DOWN &kp RIGHT &trans     &trans  &kp HOME  &kp C_VOL_DN &kp END &trans &trans
-   &trans &kp LCTRL &trans   &trans   &trans    &trans     &trans  &trans    &trans       &trans  &trans &trans
-                             &trans   &trans    &kp ESC    &kp RET &kp SPACE &trans 
+   &none &kp TAB   &none    &kp UP   &none     &none     &none   &none     &kp C_VOL_UP &none   &none  &none
+   &none &kp LSHFT &kp LEFT &kp DOWN &kp RIGHT &none     &none   &kp HOME  &kp C_VOL_DN &kp END &none  &none
+   &none &kp LCTRL &none    &none    &none     &none     &none   &none     &none        &none   &none  &none
+                            &none    &none     &kp ESC    &kp RET &kp SPACE &none 
                         >;
                 };
         };
