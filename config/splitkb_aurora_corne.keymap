@@ -62,18 +62,6 @@
                 ;
         };
 
-        colon: colon {
-            label = "colon";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <2>;
-            tap-ms = <1>;
-            bindings
-                = <&macro_press &kp LSHIFT>
-                , <&macro_tap &kp P>
-                , <&macro_release &kp LSHIFT>
-                ;
-        };
     };
         keymap {
                 compatible = "zmk,keymap";
@@ -100,9 +88,9 @@
 // |   ?  |  =  |  1  |  2  |  3  |  ¨  |       |  "  |  (  |  )  |  $  |  %  |  &  |
 //                    |  0  | BSPC| ESC |       | ENT |     |     |
                 bindings = <
-   &kp MINUS  &kp FSLH &kp N7 &kp N8   &kp N9   &kp BSLH      &kp NON_US_BSLH  &kp LBKT &kp RBKT &kp AMPS &kp EQUAL  &kp BSLH
-   &kp PIPE  &kp RBRC &kp N4 &kp N5   &kp N6   &kp TILDE    &kp SEMI  &kp ASTRK &kp LPAR &kp EXCL &kp AT    &kp HASH
-   &kp UNDER &kp RPAR &kp N1 &kp N2   &kp N3   &kp LALT       &kp RALT  &kp LBRC &kp RBRC &kp GRAVE &kp PRCNT &kp AMPS
+   &kp MINUS  &kp FSLH &kp N7 &kp N8   &kp N9   &kp BSLH    &kp NON_US_BSLH  &dk_LBKT  &dk_RBKT &kp AMPS &kp EQUAL  &kp BSLH
+   &kp PIPE  &kp RBRC &kp N4 &kp N5   &kp N6   &kp TILDE    &kp SEMI         &kp ASTRK &kp LPAR &kp EXCL &kp AT    &kp HASH
+   &kp UNDER &kp RPAR &kp N1 &kp N2   &kp N3   &kp LALT     &kp RALT         &dk_LBRC  &dk_RBRC &kp GRAVE &kp PRCNT &kp AMPS
                        &kp N0 &kp BSPC &trans             &trans &none   &trans
                        >;
                 };
