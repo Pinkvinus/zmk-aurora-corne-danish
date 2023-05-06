@@ -21,7 +21,7 @@
 / {
 
          macros {
-        dk_LBKT: dk_LBKT { // this is a macro for writting "[" on danish keyboards.
+        kp_dk_LBKT: kp_dk_LBKT { // this is a macro for writting "[" on danish keyboards.
             label = "kp_dk_LBKT";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -31,7 +31,7 @@
                 , <&macro_release &kp RALT>
                 ;
         };
-        dk_RBKT: dk_RBKT { // this is a macro for writting "]" on danish keyboards.
+        kp_dk_RBKT: kp_dk_RBKT { // this is a macro for writting "]" on danish keyboards.
             label = "kp_dk_RBKT";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -41,7 +41,7 @@
                 , <&macro_release &kp RALT>
                 ;
         };
-        dk_LBRC: dk_LBRC { // this is a macro for writting "{" on danish keyboards.
+        kp_dk_LBRC: kp_dk_LBRC { // this is a macro for writting "{" on danish keyboards.
             label = "kp_dk_LBRC";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -51,7 +51,7 @@
                 , <&macro_release &kp RALT>
                 ;
         };
-        dk_RBRC: dk_RBRC { // this is a macro for writting "}" on danish keyboards.
+        kp_dk_RBRC: kp_dk_RBRC { // this is a macro for writting "}" on danish keyboards.
             label = "kp_dk_RBRC";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
