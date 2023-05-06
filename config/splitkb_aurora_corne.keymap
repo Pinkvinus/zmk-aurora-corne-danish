@@ -14,7 +14,67 @@
 #define linux_nav 3
 #define gaming    4
 
+
+
+
+
 / {
+
+         macros {
+        dk_LBKT: dk_LBKT { // this is a macro for writting "[" on danish keyboards.
+            label = "dk_LBKT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp N8>
+                , <&macro_release &kp RALT>
+                ;
+        };
+        dk_RBKT: dk_RBKT { // this is a macro for writting "]" on danish keyboards.
+            label = "dk_RBKT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp N9>
+                , <&macro_release &kp RALT>
+                ;
+        };
+        dk_LBRC: dk_LBRC { // this is a macro for writting "{" on danish keyboards.
+            label = "dk_LBRC";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp N7>
+                , <&macro_release &kp RALT>
+                ;
+        };
+        dk_RBRC: dk_RBRC { // this is a macro for writting "}" on danish keyboards.
+            label = "dk_RBRC";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp N0>
+                , <&macro_release &kp RALT>
+                ;
+        };
+
+        colon: colon {
+            label = "colon";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <2>;
+            tap-ms = <1>;
+            bindings
+                = <&macro_press &kp LSHIFT>
+                , <&macro_tap &kp P>
+                , <&macro_release &kp LSHIFT>
+                ;
+        };
+    };
         keymap {
                 compatible = "zmk,keymap";
 
