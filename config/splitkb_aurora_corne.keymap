@@ -72,12 +72,22 @@
                 ;
         };
         dk_paste: dk_paste { // this is a macro for writting "}" on danish keyboards.
-            label = "copy";
+            label = "dk_paste";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL>
                 , <&macro_tap &kp V>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        del_word: del_word { // this is a macro for writting "}" on danish keyboards.
+            label = "del_word";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp BACKSPACE>
                 , <&macro_release &kp LCTRL>
                 ;
         };
