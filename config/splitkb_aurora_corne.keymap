@@ -14,7 +14,116 @@
 #define linux_nav 3
 #define gaming    4
 
+
+
+
+
 / {
+
+         macros {
+        kp_dk_LBKT: kp_dk_LBKT { // this is a macro for writting "[" on danish keyboards.
+            label = "kp_dk_LBKT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp N8>
+                , <&macro_release &kp RALT>
+                ;
+        };
+        kp_dk_RBKT: kp_dk_RBKT { // this is a macro for writting "]" on danish keyboards.
+            label = "kp_dk_RBKT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp N9>
+                , <&macro_release &kp RALT>
+                ;
+        };
+        kp_dk_LBRC: kp_dk_LBRC { // this is a macro for writting "{" on danish keyboards.
+            label = "kp_dk_LBRC";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp N7>
+                , <&macro_release &kp RALT>
+                ;
+        };
+        kp_dk_RBRC: kp_dk_RBRC { // this is a macro for writting "}" on danish keyboards.
+            label = "kp_dk_RBRC";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp N0>
+                , <&macro_release &kp RALT>
+                ;
+        };
+        copy: copy { // this is a macro for writting "}" on danish keyboards.
+            label = "copy";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp C>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        dk_paste: dk_paste { // this is a macro for writting "}" on danish keyboards.
+            label = "dk_paste";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp V>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        del_word: del_word { // this is a macro for writting "}" on danish keyboards.
+            label = "del_word";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp BACKSPACE>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        kp_dk_BLSH: kp_dk_BLSH { // this is a macro for writting "}" on danish keyboards.
+            label = "kp_dk_BLSH";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp NON_US_BACKSLASH>
+                , <&macro_release &kp RALT>
+                ;
+        };
+        kp_dk_PIPE: kp_dk_PIPE { // this is a macro for writting "}" on danish keyboards.
+            label = "kp_dk_PIPE";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RSHIFT>
+                , <&macro_tap &kp EQUAL>
+                , <&macro_release &kp RSHIFT>
+                ;
+        };
+
+        kp_dk_UNDER: kp_dk_UNDER { // this is a macro for writting "}" on danish keyboards.
+            label = "kp_dk_UNDER";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHIFT>
+                , <&macro_tap &kp FSLH>
+                , <&macro_release &kp LSHIFT>
+                ;
+        };
+
+    };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -35,15 +144,15 @@
 
                 num_char {
 // -----------------------------------------------------------------------------------------
-// |   +  |  -  |  7  |  8  |  9  |  '  |       |  <  |  [  |  ]  |  /  |  |  |  \  |
-// |   *  |  ^  |  4  |  5  |  6  |  ~  |       |  >  |  {  |  }  |  !  |  @  |  #  |
+// |   +  |  -  |  7  |  8  |  9  |  _  |       |  '  |  [  |  ]  |  /  |  |  |  \  |
+// |   *  |  ^  |  4  |  5  |  6  |  ~  |       |  "  |  {  |  }  |  !  |  @  |  #  |
 // |   ?  |  =  |  1  |  2  |  3  |  ¨  |       |  "  |  (  |  )  |  $  |  %  |  &  |
 //                    |  0  | BSPC| ESC |       | ENT |     |     |
                 bindings = <
-   &kp PLUS  &kp MINUS &kp N7 &kp N8   &kp N9   &kp SQT      &kp LT  &kp LBKT &kp RBKT &kp FSLH &kp PIPE  &kp BSLH
-   &kp STAR  &kp CARET &kp N4 &kp N5   &kp N6   &kp TILDE    &kp GT  &kp LPAR &kp RPAR &kp EXCL &kp AT    &kp HASH
-   &kp QMARK &kp EQUAL &kp N1 &kp N2   &kp N3   &none        &none  &kp LBRC &kp RBRC &kp DLLR &kp PRCNT &kp AMPS
-                       &kp N0 &kp BSPC &trans             &trans &none   &trans
+   &kp MINUS &kp FSLH &kp N7 &kp N8    &kp N9  &kp_dk_UNDER    &kp BACKSLASH  &kp_dk_LBKT  &kp_dk_RBKT &kp AMPS  &kp_dk_PIPE &kp_dk_BLSH
+   &kp PIPE  &kp RBRC &kp N4 &kp N5    &kp N6  &kp TILDE    &kp AT         &kp ASTRK    &kp LPAR    &kp EXCL  &kp AT    &kp HASH
+   &kp UNDER &kp RPAR &kp N1 &kp N2    &kp N3  &kp LALT     &kp RALT       &kp_dk_LBRC  &kp_dk_RBRC &kp GRAVE &kp PRCNT &kp AMPS
+                       &kp N0 &del_word &trans             &trans &none   &trans
                        >;
                 };
 
@@ -51,12 +160,12 @@
 // -----------------------------------------------------------------------------------------
 // |     | tab |     |arup |     |     |       |     |      | volup |     |    |    |
 // |     |lshft|arlft|ardwn|arght|     |       |     | home | volup | end |    |    |
-// |     |lctrl|     |     |     |     |       |     |      |       |     |    |    |
+// |     |lctrl|     | copy|paste|     |       |     |      |       |     |    |    |
 //                   |     |     | ESC |       | ENT | space|       |
                 bindings = <
    &none &kp TAB   &none    &kp UP   &none     &none     &none   &none     &kp C_VOL_UP &none   &none  &none
    &none &kp LSHFT &kp LEFT &kp DOWN &kp RIGHT &none     &none   &kp HOME  &kp C_VOL_DN &kp END &none  &none
-   &none &kp LCTRL &none    &none    &none     &none     &none   &none     &none        &none   &none  &none
+   &none &kp LCTRL &none    &copy    &dk_paste &none     &none   &none     &none        &none   &none  &none
                             &none    &none     &kp ESC    &kp RET &kp SPACE &none 
                         >;
                 };
