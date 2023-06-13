@@ -14,7 +14,7 @@
 #define linux_nav 3
 #define gaming    4
 
-#include <aliases.h>
+#include "aliases.h"
 
 
 
