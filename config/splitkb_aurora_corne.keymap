@@ -15,6 +15,11 @@
 #define gaming    4
 
 
+//Aliases
+#define DK_plus MINUS
+
+
+
 
 
 
@@ -61,7 +66,7 @@
                 , <&macro_release &kp RALT>
                 ;
         };
-        copy: copy { // this is a macro for writting "}" on danish keyboards.
+        copy: copy { // this is a macro for copying
             label = "copy";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -71,7 +76,7 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
-        dk_paste: dk_paste { // this is a macro for writting "}" on danish keyboards.
+        dk_paste: dk_paste { // this is a macro for pasting
             label = "dk_paste";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -81,7 +86,7 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
-        del_word: del_word { // this is a macro for writting "}" on danish keyboards.
+        del_word: del_word { // this is a macro for utilising the delete word functionality on windows
             label = "del_word";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -91,7 +96,7 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
-        kp_dk_BLSH: kp_dk_BLSH { // this is a macro for writting "}" on danish keyboards.
+        kp_dk_BLSH: kp_dk_BLSH { // this is a macro for writting "\" on danish keyboards.
             label = "kp_dk_BLSH";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -101,7 +106,7 @@
                 , <&macro_release &kp RALT>
                 ;
         };
-        kp_dk_PIPE: kp_dk_PIPE { // this is a macro for writting "}" on danish keyboards.
+        kp_dk_PIPE: kp_dk_PIPE { // this is a macro for writting "|" on danish keyboards.
             label = "kp_dk_PIPE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -112,7 +117,7 @@
                 ;
         };
 
-        kp_dk_UNDER: kp_dk_UNDER { // this is a macro for writting "}" on danish keyboards.
+        kp_dk_UNDER: kp_dk_UNDER { // this is a macro for writting "_" on danish keyboards.
             label = "kp_dk_UNDER";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
