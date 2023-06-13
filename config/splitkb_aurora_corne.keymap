@@ -14,10 +14,18 @@
 #define linux_nav 3
 #define gaming    4
 
-
 //Aliases
 #define DK_plus MINUS
-
+#define DK_minus FSLH
+#define DK_astrk PIPE
+#define DK_qmark UNDER
+#define DK_caret RBRC
+#define DK_equal RBRC
+#define DK_lpar ASTRK
+#define DK_rpar LPAR
+#define DK_flsh AMPS
+#define DK_sqt BACKSLASH 
+#define DK_dqt AT
 
 
 
@@ -154,10 +162,10 @@
 // |   ?  |  =  |  1  |  2  |  3  |  ¨  |       |  "  |  (  |  )  |  $  |  %  |  &  |
 //                    |  0  | BSPC| ESC |       | ENT |     |     |
                 bindings = <
-   &kp DK_plus &kp FSLH &kp N7 &kp N8    &kp N9  &kp_dk_UNDER    &kp BACKSLASH  &kp_dk_LBKT  &kp_dk_RBKT &kp AMPS  &kp_dk_PIPE &kp_dk_BLSH
-   &kp PIPE  &kp RBRC &kp N4 &kp N5    &kp N6  &kp TILDE    &kp AT         &kp ASTRK    &kp LPAR    &kp EXCL  &kp AT    &kp HASH
-   &kp UNDER &kp RPAR &kp N1 &kp N2    &kp N3  &kp LALT     &kp RALT       &kp_dk_LBRC  &kp_dk_RBRC &kp GRAVE &kp PRCNT &kp AMPS
-                       &kp N0 &del_word &trans             &trans &none   &trans
+   &kp DK_plus  &kp DK_minus &kp N7 &kp N8    &kp N9  &kp_dk_UNDER          &kp DK_sqt &kp_dk_LBKT  &kp_dk_RBKT &kp DK_flsh  &kp_dk_PIPE &kp_dk_BLSH
+   &kp DK_astrk &kp DK_caret &kp N4 &kp N5    &kp N6  &kp TILDE             &kp DK_dqt &kp DK_lpar  &kp DK_rpar &kp EXCL  &kp AT    &kp HASH
+   &kp DK_qmark &kp DK_equal &kp N1 &kp N2    &kp N3  &kp LALT              &kp RALT   &kp_dk_LBRC  &kp_dk_RBRC &kp GRAVE &kp PRCNT &kp AMPS
+                                    &kp N0 &del_word &trans                 &trans     &none        &trans
                        >;
                 };
 
