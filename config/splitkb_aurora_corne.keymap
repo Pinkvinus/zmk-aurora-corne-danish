@@ -13,12 +13,13 @@
 #define DIREC     2
 #define linux_nav 3
 #define gaming    4
+#define fkeys     5
 
 #include "aliases.h" //file contains aliases for most symbols for the danish language
 
 / {
 
-         macros {
+        macros {
         kp_dk_LBKT: kp_dk_LBKT { // this is a macro for writting "[" on danish keyboards.
             label = "kp_dk_LBKT";
             compatible = "zmk,behavior-macro";
@@ -181,12 +182,26 @@
                      &kp LGUI &none &none     &none &none &none 
                         >;
                 };
+
                 gaming {
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp UP     &kp O   &kp P    &kp LBKT
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp LEFT  &kp DOWN     &kp RIGHT   &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp LGUI &kp LALT
                    &kp ESC  &kp SPACE  &kp RET   &kp RET &kp SPACE &to 0
+                        >;
+                };
+                fkeys {
+// -----------------------------------------------------------------------------------------
+// |     | tab |     |arup |     |     |       |     |      | volup |     |    |    |
+// |     |lshft|arlft|ardwn|arght|     |       |     | home | volup | end |    |    |
+// |     |lctrl|     |     |     |     |       |     |      |       |     |    |    |
+//                   |     |     | ESC |       | ENT | space|       |
+                bindings = <
+   &none &none &kp F7 &kp F8 &kp F9 &none     &none &none &none &none &none &none
+   &none &none &kp F4 &kp F5 &kp F6 &none     &none &none &none &none &none &none
+   &none &none &kp F1 &kp F2 &kp F3 &none  &none &none &none &none &none &none
+                     &none &none &none     &none &none &none 
                         >;
                 };
         };
