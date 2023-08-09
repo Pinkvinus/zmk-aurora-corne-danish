@@ -13,14 +13,13 @@
 #define DIREC     2
 #define linux_nav 3
 #define gaming    4
+#define fkeys     5
 
-
-
-
+#include "aliases.h" //file contains aliases for most symbols for the danish language
 
 / {
 
-         macros {
+        macros {
         kp_dk_LBKT: kp_dk_LBKT { // this is a macro for writting "[" on danish keyboards.
             label = "kp_dk_LBKT";
             compatible = "zmk,behavior-macro";
@@ -61,7 +60,7 @@
                 , <&macro_release &kp RALT>
                 ;
         };
-        copy: copy { // this is a macro for writting "}" on danish keyboards.
+        copy: copy { // this is a macro for copying
             label = "copy";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -71,7 +70,7 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
-        dk_paste: dk_paste { // this is a macro for writting "}" on danish keyboards.
+        dk_paste: dk_paste { // this is a macro for pasting
             label = "dk_paste";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -81,7 +80,7 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
-        del_word: del_word { // this is a macro for writting "}" on danish keyboards.
+        del_word: del_word { // this is a macro for utilising the delete word functionality on windows
             label = "del_word";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -91,7 +90,7 @@
                 , <&macro_release &kp LCTRL>
                 ;
         };
-        kp_dk_BLSH: kp_dk_BLSH { // this is a macro for writting "}" on danish keyboards.
+        kp_dk_BLSH: kp_dk_BLSH { // this is a macro for writting "\" on danish keyboards.
             label = "kp_dk_BLSH";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -101,7 +100,7 @@
                 , <&macro_release &kp RALT>
                 ;
         };
-        kp_dk_PIPE: kp_dk_PIPE { // this is a macro for writting "}" on danish keyboards.
+        kp_dk_PIPE: kp_dk_PIPE { // this is a macro for writting "|" on danish keyboards.
             label = "kp_dk_PIPE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -112,7 +111,7 @@
                 ;
         };
 
-        kp_dk_UNDER: kp_dk_UNDER { // this is a macro for writting "}" on danish keyboards.
+        kp_dk_UNDER: kp_dk_UNDER { // this is a macro for writting "_" on danish keyboards.
             label = "kp_dk_UNDER";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -149,10 +148,10 @@
 // |   ?  |  =  |  1  |  2  |  3  |  ¨  |       |  "  |  (  |  )  |  $  |  %  |  &  |
 //                    |  0  | BSPC| ESC |       | ENT |     |     |
                 bindings = <
-   &kp MINUS &kp FSLH &kp N7 &kp N8    &kp N9  &kp_dk_UNDER    &kp BACKSLASH  &kp_dk_LBKT  &kp_dk_RBKT &kp AMPS  &kp_dk_PIPE &kp_dk_BLSH
-   &kp PIPE  &kp RBRC &kp N4 &kp N5    &kp N6  &kp TILDE    &kp AT         &kp ASTRK    &kp LPAR    &kp EXCL  &kp AT    &kp HASH
-   &kp UNDER &kp RPAR &kp N1 &kp N2    &kp N3  &kp LALT     &kp RALT       &kp_dk_LBRC  &kp_dk_RBRC &kp GRAVE &kp PRCNT &kp AMPS
-                       &kp N0 &del_word &trans             &trans &none   &trans
+   &kp DK_plus  &kp DK_minus &kp N7 &kp N8    &kp N9  &kp_dk_UNDER          &kp DK_sqt &kp_dk_LBKT  &kp_dk_RBKT &kp DK_flsh &kp_dk_PIPE &kp_dk_BLSH
+   &kp DK_astrk &kp DK_caret &kp N4 &kp N5    &kp N6  &kp TILDE             &kp DK_dqt &kp DK_lpar  &kp DK_rpar &kp EXCL    &kp AT    &kp HASH
+   &kp DK_qmark &kp DK_equal &kp N1 &kp N2    &kp N3  &kp LALT              &kp RALT   &kp_dk_LBRC  &kp_dk_RBRC &kp DK_dllr &kp PRCNT &kp AMPS
+                                    &kp N0 &del_word &trans                 &trans     &none        &trans
                        >;
                 };
 
@@ -179,16 +178,30 @@
                 bindings = <
    &none &none &kp N7 &kp N8 &kp N9 &none     &none &none &none &none &none &none
    &none &none &kp N4 &kp N5 &kp N6 &none     &none &none &none &none &none &none
-   &none &kp LGUI &kp N1 &kp N2 &kp N3 &none     &none &none &none &none &none &none
+   &none &kp LGUI &kp N1 &kp N2 &kp N3 &none  &none &none &none &none &none &none
                      &kp LGUI &none &none     &none &none &none 
                         >;
                 };
+
                 gaming {
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp UP     &kp O   &kp P    &kp LBKT
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp LEFT  &kp DOWN     &kp RIGHT   &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp LGUI &kp LALT
                    &kp ESC  &kp SPACE  &kp RET   &kp RET &kp SPACE &to 0
+                        >;
+                };
+                fkeys {
+// -----------------------------------------------------------------------------------------
+// |     | tab |     |arup |     |     |       |     |      | volup |     |    |    |
+// |     |lshft|arlft|ardwn|arght|     |       |     | home | volup | end |    |    |
+// |     |lctrl|     |     |     |     |       |     |      |       |     |    |    |
+//                   |     |     | ESC |       | ENT | space|       |
+                bindings = <
+   &none &none &kp F7 &kp F8 &kp F9 &none     &none &none &none &none &none &none
+   &none &none &kp F4 &kp F5 &kp F6 &none     &none &none &none &none &none &none
+   &none &none &kp F1 &kp F2 &kp F3 &none  &none &none &none &none &none &none
+                     &none &none &none     &none &none &none 
                         >;
                 };
         };
