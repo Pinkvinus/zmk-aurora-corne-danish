@@ -4,7 +4,7 @@
 #define DK_astrk PIPE
 #define DK_qmark UNDER
 #define DK_caret RBRC
-#define DK_equal RBRC
+#define DK_equal RPAR
 #define DK_lpar ASTRK
 #define DK_rpar LPAR
 #define DK_flsh AMPS
