@@ -19,7 +19,7 @@
 
 / {
 
-        macros {
+    macros {
         kp_dk_LBKT: kp_dk_LBKT { // this is a macro for writting "[" on danish keyboards.
             label = "kp_dk_LBKT";
             compatible = "zmk,behavior-macro";
@@ -110,7 +110,6 @@
                 , <&macro_release &kp RALT>
                 ;
         };
-
         kp_dk_UNDER: kp_dk_UNDER { // this is a macro for writting "_" on danish keyboards.
             label = "kp_dk_UNDER";
             compatible = "zmk,behavior-macro";
@@ -119,6 +118,46 @@
                 = <&macro_press &kp LSHIFT>
                 , <&macro_tap &kp FSLH>
                 , <&macro_release &kp LSHIFT>
+                ;
+        };
+        mod_left: mod_left { // this is a macro for writting "_" on danish keyboards.
+            label = "mod_left";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        mod_up: mod_up { // this is a macro for writting "_" on danish keyboards.
+            label = "mod_up";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp UP>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        mod_right: mod_right { // this is a macro for writting "_" on danish keyboards.
+            label = "mod_right";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        mod_down: mod_down { // this is a macro for writting "_" on danish keyboards.
+            label = "mod_down";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp DOWN>
+                , <&macro_release &kp LGUI>
                 ;
         };
 
@@ -137,7 +176,7 @@
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LBKT
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp LGUI &kp LALT
-                   &lt 3 ESC  &lt 2 BSPC  &kp LSHFT   &kp RET &lt 1 SPACE &to 4
+                   &lt linux_nav ESC  &lt 2 BSPC  &kp LSHFT   &kp RET &lt 1 SPACE &to 4
                         >;
                 };
 
@@ -176,10 +215,10 @@
 // |     |lctrl|     |     |     |     |       |     |      |       |     |    |    |
 //                   |     |     | ESC |       | ENT | space|       |
                 bindings = <
-   &none &none &kp N7 &kp N8 &kp N9 &none     &none &none &none &none &none &none
-   &none &none &kp N4 &kp N5 &kp N6 &none     &none &none &none &none &none &none
-   &none &kp LGUI &kp N1 &kp N2 &kp N3 &none  &none &none &none &none &none &none
-                     &kp LGUI &none &none     &none &none &none 
+   &none &none &none        &kp mod_up   &none         &none     &none &none &none &none &none &none
+   &none &none &kp mod_left &kp mod_down &kp mod_right &none     &none &none &none &none &none &none
+   &none &none &none        &none        &none         &none     &none &none &none &none &none &none
+                                           &none &none &none     &none &none &none 
                         >;
                 };
 
