@@ -164,7 +164,6 @@
     };
         keymap {
                 compatible = "zmk,keymap";
-
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |  Å  |
@@ -223,25 +222,20 @@
                 };
 
                 gaming {
-                        bindings = <
+                    bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp UP     &kp O   &kp P    &kp LBKT
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp LEFT  &kp DOWN     &kp RIGHT   &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp LGUI &kp LALT
                    &kp ESC  &kp SPACE  &kp RET   &kp RET &kp SPACE &to 0
-                        >;
+                    >;
                 };
                 fkeys {
-// -----------------------------------------------------------------------------------------
-// |     | tab |     |arup |     |     |       |     |      | volup |     |    |    |
-// |     |lshft|arlft|ardwn|arght|     |       |     | home | volup | end |    |    |
-// |     |lctrl|     |     |     |     |       |     |      |       |     |    |    |
-//                   |     |     | ESC |       | ENT | space|       |
-                bindings = <
+                    bindings = <
    &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
    &none &none &none &none &none &none         &none &none &none &none &none &none
    &none &none &none &none &none &none         &none &none &none &none &none &none
                      &none &none &none         &none &none &none 
-                        >;
+                    >;
                 };
         };
 };
