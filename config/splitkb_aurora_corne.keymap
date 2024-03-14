@@ -214,10 +214,10 @@
 // |     |lctrl|     |     |     |     |       |     |      |       |     |    |    |
 //                   |     |     | ESC |       | ENT | space|       |
                 bindings = <
-   &none &none &none        &kp mod_up   &none         &none     &none &none &none &none &none &none
-   &none &none &kp mod_left &kp mod_down &kp mod_right &none     &none &none &none &none &none &none
-   &none &none &none        &none        &none         &none     &none &none &none &none &none &none
-                                           &none &none &none     &none &none &none 
+   &none &none &none     &mod_up   &none      &none     &none &none &none &none &none &none
+   &none &none &mod_left &mod_down &mod_right &none     &none &none &none &none &none &none
+   &none &none &none     &none     &none      &none     &none &none &none &none &none &none
+                                  &none &none &none     &none &none &none 
                         >;
                 };
 
